@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Selecting an Element!</title>
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <ul class="container">
+      <li class="box" id="box-1"></li>
+      <li class="box box-to-select" id="box-2"></li>
+      <li class="box box-to-select" id="box-3"></li>
+      <li class="box box-to-select" id="box-4"></li>
+      <li class="box" id="box-5"></li>
+      <li class="box box-to-select-2" id="box-6"></li>
+      <li class="box box-to-select-2" id="box-7"></li>
+      <li class="box box-to-select-2" id="box-8"></li>
+    </ul>
+  </div>
+
+  <script>
+      //Get element by id
+
+      const box = document.getElementById("box-1");
+      box.addEventListener("click", function(event){
+        event.target.style.backgroundColor = "DarkCyan";
+        event.target.style.borderStyle = "solid";
+          event.target.style.borderColor = "grey";
+        console.log(event.target);
+      });
+
+      //Get element by className
+      let boxes = document.getElementsByClassName("box-to-select");
+      //Iterate boxes through a For of loop to add functionallity
+      for (const element of boxes){
+        element.addEventListener("click", function(event){
+          event.target.style.backgroundColor = "DarkGray";
+          event.target.style.borderStyle = "solid";
+          event.target.style.borderColor = "grey";
+          console.log(event.target);
+        });
+      }
+
+
+      //Get Element with qeurySelector
+      const queryboxes = document.querySelector("#box-5");
+      queryboxes.addEventListener("click", function(event){
+        event.target.style.backgroundColor = "DarkCyan";
+        event.target.style.borderStyle = "solid";
+          event.target.style.borderColor = "grey";
+      })
+
+      //Get element by querySelectorAll
+      const querlyAll = document.querySelectorAll(".box-to-select-2");
+      //Iterate boxes through a For of loop to add functionallity
+      for (const element of querlyAll){
+        element.addEventListener("click", function(event){
+
+          event.target.style.backgroundColor="Pink";
+          event.target.style.borderStyle = "solid";
+          event.target.style.borderColor = "grey";
+        });
+      }
+
+
+  </script>
+</body>
+
+</html>
